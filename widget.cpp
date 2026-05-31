@@ -26,7 +26,7 @@ Widget::Widget(QWidget *parent)
 
     // 设置窗口名称及大小
     this->setWindowTitle("Camera");
-    this->setFixedSize(600, 600);
+    this->setFixedSize(650, 550);
 
     // 获取所有相机列表
     cameras = QMediaDevices::videoInputs();
@@ -158,8 +158,8 @@ void Widget::initializeCamera(int index) {
     // 设置取景器：即设置视频输出
     if (!viewfinder) {
         viewfinder = new QVideoWidget(this);
-        viewfinder->resize(600, 350);
-        viewfinder->move(0, 50);
+        viewfinder->resize(600, 420);
+        viewfinder->move(25, 20);
     }
     captureSession->setVideoOutput(viewfinder);
     viewfinder->show();
